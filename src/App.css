@@ -3,7 +3,7 @@ body{
   background-color: black;
 }
 footer {
-  position: fixed;
+  position: relative;
   height: 50px;
   background-color: rgb(0, 0, 0);
   bottom: 0px;
