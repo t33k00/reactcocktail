@@ -10,21 +10,16 @@ export default function Cocktail() {
     const [strInstructions, setstrInstructions] = useState('')
     const [strGlass, setstrGlass] = useState('')
     const [strImg, setstrImg] = useState('')
-    const [strIngredients1, setstrIngredients1] = useState('')
-
 
     useEffect(() => {
         axios.get(url)
             .then((response) => {
-                var i=0;
                 console.log(response.data)
                 setstrDrink(response.data.drinks[0].strDrink);
                 setstrInstructions(response.data.drinks[0].strInstructions);
                 setstrGlass(response.data.drinks[0].strGlass);
-                setstrImg(response.data.drinks[0].strDrinkThumb); 
-                setstrIngredients1(response.data.drinks[0].strIngredients1);               
-                i++;
-            
+                setstrImg(response.data.drinks[0].strDrinkThumb);
+
             })
 
     }, [])
@@ -34,8 +29,6 @@ export default function Cocktail() {
         <div>
             <h3>Cocktail of the day</h3>
             <p>{strDrink}</p>
-            <h3>Ingredients</h3>
-            <p>{strIngredients1}</p>
             <h3>Instructions</h3>
             <p>{strInstructions}</p>
             <h3>Glass:</h3>
