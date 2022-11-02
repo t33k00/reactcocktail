@@ -1,6 +1,7 @@
 body{
-  color: white;
+  color: rgb(253, 254, 254);
   background-color: black;
+  text-align: center;
 }
 footer {
   position: relative;
@@ -16,4 +17,12 @@ header{
   width: 100%;
   background-size: cover;
   margin-top: 0px;
+}
+input[type="text"]{    
+  background-color: rgb(33, 37, 41);
+  border:0px;    
+}
+button{
+  color: rgb(255, 255, 255);
+  background-color: rgb(33, 37, 41);
 }

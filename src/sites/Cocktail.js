@@ -12,7 +12,6 @@ export default function Cocktail() {
   const [strGlass, setstrGlass] = useState('')
   const [strImg, setstrImg] = useState('')
 
-
   function searchdrink() {
 
     const searchurl = url + search
@@ -40,9 +39,9 @@ export default function Cocktail() {
       })
 
   }, [])
-
-  return (
-    <div>
+  if (!strDrink) {
+    
+      return <div><h3>Search cocktails</h3>
       <input
         type="text"
         name="search"
@@ -50,12 +49,25 @@ export default function Cocktail() {
         value={search}
       />
       <button type="button" onClick={searchdrink} >search</button>
-      <h3>Cocktail of the day</h3>
-      <p>{strDrink}</p>
-      <h3>Instructions</h3>
-      <p>{strInstructions}</p>
-      <h3>Glass:</h3>
-      <p>{strGlass}</p>
-      <img src={strImg} alt="" />
-    </div>);
+    </div>
+  }
+  else {
+    return (
+      <div>
+        <input
+          type="text"
+          name="search"
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+        />
+        <button type="button" onClick={searchdrink} >search</button>
+        <h3>Cocktail of the day</h3>
+        <p>{strDrink}</p>
+        <h3>Instructions</h3>
+        <p>{strInstructions}</p>
+        <h3>Glass:</h3>
+        <p>{strGlass}</p>
+        <img src={strImg} alt="" />
+      </div>);
+  }
 }
